@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-interface ProductItemProps {
+type ProductItemProps = {
   product: Product;
-}
+};
 
 export const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   return (
