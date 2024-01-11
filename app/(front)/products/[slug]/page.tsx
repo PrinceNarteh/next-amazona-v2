@@ -1,7 +1,10 @@
+"use client";
+
 import { data } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { Icon } from "@iconify/react";
 
 type ProductDetailsProps = {
   params: {
@@ -69,7 +72,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ params }) => {
                 </div>
               </div>
               <div className="card-actions justify-center">
-                <button className="btn btn-primary w-full">Add To Cart</button>
+                <button className="btn btn-primary w-full flex items-center">
+                  <Icon icon="f7:cart" fontSize={18} />
+                  <span className="block">Add To Cart</span>
+                </button>
               </div>
             </div>
           </div>
