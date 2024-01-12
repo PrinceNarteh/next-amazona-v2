@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Icon } from "@iconify/react";
+import { AddToCart } from "@/components/products/AddToCart";
 
 type ProductDetailsProps = {
   params: {
@@ -71,12 +72,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ params }) => {
                   {product.countInStock > 0 ? "In Stock" : "Unavialable"}
                 </div>
               </div>
-              <div className="card-actions justify-center">
-                <button className="btn btn-primary w-full flex items-center">
-                  <Icon icon="f7:cart" fontSize={18} />
-                  <span className="block">Add To Cart</span>
-                </button>
-              </div>
+              {product.countInStock !== 0 && (
+                <div className="card-actions justify-center">
+                  <AddToCart
+                    item={{ ...product, qty: 0, color: "", size: "" }}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
