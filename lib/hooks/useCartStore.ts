@@ -45,6 +45,25 @@ export default function useCartService() {
         items: updatedCartItems,
       });
     },
+    decrese: (item: OrderItem) => {
+      const itemExists = items.find((x) => x.slug === item.slug);
+      if (!itemExists || itemExists.qty === 1) return;
+
+      const updatedCartItems = items.map((x) =>
+        x.slug === item.slug ? { ...itemExists, qty: itemExists.qty - 1 } : x
+      );
+
+      const { itemsPrice, shippingPrice, taxPrice, totalPrice } =
+        calcPrice(updatedCartItems);
+
+      cartStore.setState({
+        itemsPrice,
+        shippingPrice,
+        taxPrice,
+        totalPrice,
+        items: updatedCartItems,
+      });
+    },
   };
 }
 

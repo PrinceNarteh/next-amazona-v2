@@ -1,11 +1,10 @@
 "use client";
 
+import { AddToCart } from "@/components/products/AddToCart";
 import { data } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Icon } from "@iconify/react";
-import { AddToCart } from "@/components/products/AddToCart";
 
 type ProductDetailsProps = {
   params: {

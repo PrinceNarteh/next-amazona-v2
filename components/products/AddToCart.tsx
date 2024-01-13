@@ -9,7 +9,7 @@ type AddToCartProps = {
 };
 export const AddToCart: React.FC<AddToCartProps> = ({ item }) => {
   const router = useRouter();
-  const { items, increase } = useCartService();
+  const { items, increase, decrese } = useCartService();
   const [existItem, setExistItem] = useState<OrderItem | undefined>(undefined);
 
   const addToCartHandler = () => {
@@ -22,7 +22,7 @@ export const AddToCart: React.FC<AddToCartProps> = ({ item }) => {
 
   return existItem ? (
     <div>
-      <button className="btn" type="button">
+      <button onClick={() => decrese(item)} className="btn" type="button">
         -
       </button>
       <span className="px-2">{existItem.qty}</span>
