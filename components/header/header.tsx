@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { Icon } from "@iconify/react";
+import Menu from "./Menu";
 
 export const Header = () => {
   return (
@@ -13,26 +14,7 @@ export const Header = () => {
             Next Amazona V2
           </Link>
 
-          <ul className="flex">
-            <li>
-              <Link
-                href="/cart"
-                className="flex items-center btn btn-ghost rounded-btn"
-              >
-                <Icon icon="f7:cart" fontSize={18} />
-                <span className="block">Cart</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/cart"
-                className="flex items-center btn btn-ghost rounded-btn"
-              >
-                <Icon icon="codicon:sign-in" fontSize={18} />
-                <span className="block">Sign In</span>
-              </Link>
-            </li>
-          </ul>
+          <Menu />
         </div>
       </nav>
     </header>
