@@ -49,7 +49,7 @@ export default function useCartService() {
         items: updatedCartItems,
       });
     },
-    decrese: (item: OrderItem) => {
+    decrease: (item: OrderItem) => {
       const itemExists = items.find((x) => x.slug === item.slug);
       if (!itemExists || itemExists.qty === 1) return;
 
