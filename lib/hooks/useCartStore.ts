@@ -12,7 +12,11 @@ const initState: Cart = {
   totalPrice: 0,
 };
 
-export const cartStore = create<Cart>(() => initState);
+export const cartStore = create<Cart>()(
+  persist(() => initState, {
+    name: "cartStore",
+  })
+);
 
 export default function useCartService() {
   const { items, itemsPrice, shippingPrice, taxPrice, totalPrice } =
