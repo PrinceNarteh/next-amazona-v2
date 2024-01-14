@@ -1,3 +1,5 @@
+"use client";
+
 import useCartService from "@/lib/hooks/useCartStore";
 import { OrderItem } from "@/lib/models/OrderModel";
 import { Icon } from "@iconify/react/dist/iconify.js";
